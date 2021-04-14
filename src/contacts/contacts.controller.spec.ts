@@ -24,7 +24,7 @@ describe('ContactsController', () => {
   });
 
   describe('get contacts', () => {
-    it('should return a list of contacts"', () => {
+    it('should return a list of contacts', () => {
       expect(controller.index()).toBe('teste!');
     });
   });
