@@ -17,42 +17,39 @@ $ npm run start
 
 # watch mode
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
-## Testes
+## Tests
 
 ```bash
 # unit tests
 $ pm run test src/contacts/contacts.service.spec.ts
 ```
 
-## Operações do Crud
+## Crud operations
 
 
-Retorna todos os contatos:
+Return all contacts:
 ```
 curl -X GET "http://localhost:3000/contacts" -H "accept: application/json"
 ```
 
-Cria um novo contato:
+Create a new contact:
 ```
 curl -X POST "http://localhost:3000/contacts/create" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"firstName\":\"John\",\"lastName\":\"Travolta\",\"email\":\"john@travolta.com\",\"phone\":\"47999999999\",\"city\":\"Joinville\",\"country\":\"Brasil\"}"
 ```
 
-Atualiza um contato (no exemplo a cidade é atualizada):
+Update a contact:
 ```
 curl -X PUT "http://localhost:3000/contacts/update/1" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"firstName\":\"John\",\"lastName\":\"Travolta\",\"email\":\"john@travolta.com\",\"phone\":\"47999999999\",\"city\":\"Rio de Janeiro\",\"country\":\"Brasil\"}"
 ```
 
-Resgata o contato
+Returns a contact
 ```
 curl -X GET "http://localhost:3000/contacts/get/1" -H "accept: application/json"
 ```
 
-Deleta o contato:
+Remove a contact:
 ```
 curl -X DELETE "http://localhost:3000/contacts/delete/1" -H "accept: application/json" -H "Content-Type: application/json"
 ```
