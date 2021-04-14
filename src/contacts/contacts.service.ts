@@ -5,6 +5,7 @@ import { Contact } from './contact.entity';
 import { UpdateResult, DeleteResult } from  'typeorm';
 
 export interface CreateContactData {
+    readonly id?: number;
     readonly firstName: string;
     readonly lastName: string;
     readonly email: string;
@@ -38,24 +39,6 @@ export class ContactsService {
         return await this.contactRepository.find();
     }
 
-    // async findOne(id: number): Promise<Contact> {
-    //     return await this.contactRepository.findOne({where: {id: id}});
-    // }
-
-    // async create(contact: Contact): Promise<Contact> {
-    //     return await this.contactRepository.save(contact);
-    // }
-
-    // async update(contact: Contact): Promise<UpdateResult> {
-    //     return await this.contactRepository.update(contact.id, contact);
-    // }
-
-    // async delete(id): Promise<DeleteResult> {
-    //     return await this.contactRepository.delete(id);
-    // }
-
-    // New methods
-
     async findOneByIdOrThrow(id: number): Promise<Contact> {
         const contact = await this.contactRepository.findOne({id});
         if (!contact) {
@@ -84,10 +67,6 @@ export class ContactsService {
     
         return createdContact;
     }
-    
-    // async removeOne(id: number): Promise<DeleteResult> {
-    //     return await this.contactRepository.delete(id);
-    // }
 
     async removeOne(removeContactData: RemoveContactData): Promise<void> {
         const { id } = removeContactData;
