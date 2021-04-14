@@ -1,7 +1,7 @@
 
 ## Description
 
-Um simples CRUD de contatos utilizando o NestJS com Sqlite.
+A contacts CRUD API using NestJS and TypeORM
 
 ## Installation
 
@@ -23,10 +23,10 @@ $ npm run start:dev
 
 ```bash
 # unit tests
-$ pm run test src/contacts/contacts.service.spec.ts
+$ pm run test
 ```
 
-## Crud operations
+## CRUD avaliable operations
 
 
 Return all contacts:
@@ -36,20 +36,20 @@ curl -X GET "http://localhost:3000/contacts" -H "accept: application/json"
 
 Create a new contact:
 ```
-curl -X POST "http://localhost:3000/contacts/create" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"firstName\":\"John\",\"lastName\":\"Travolta\",\"email\":\"john@travolta.com\",\"phone\":\"47999999999\",\"city\":\"Joinville\",\"country\":\"Brasil\"}"
+curl -X POST "http://localhost:3000/contacts/create" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"firstName\":\"John\",\"lastName\":\"Travolta\",\"email\":\"stenio@souza.com\",\"phone\":\"47999999999\",\"city\":\"Joinville\",\"country\":\"Brasil\"}"
 ```
 
-Update a contact:
+Update a contact by id:
 ```
 curl -X PUT "http://localhost:3000/contacts/update/1" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"firstName\":\"John\",\"lastName\":\"Travolta\",\"email\":\"john@travolta.com\",\"phone\":\"47999999999\",\"city\":\"Rio de Janeiro\",\"country\":\"Brasil\"}"
 ```
 
-Returns a contact
+Returns a contact by id
 ```
 curl -X GET "http://localhost:3000/contacts/get/1" -H "accept: application/json"
 ```
 
-Remove a contact:
+Remove a contact by id:
 ```
 curl -X DELETE "http://localhost:3000/contacts/delete/1" -H "accept: application/json" -H "Content-Type: application/json"
 ```
