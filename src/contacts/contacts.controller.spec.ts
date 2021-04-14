@@ -23,10 +23,12 @@ describe('ContactsController', () => {
     service = module.get<ContactsService>(ContactsService);
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
+  describe('get contacts', () => {
+    it('should return a list of contacts"', () => {
       expect(controller.index()).toBe('teste!');
     });
   });
+  
+  // TODO: implement tests for all CRUD operations
 
 });
