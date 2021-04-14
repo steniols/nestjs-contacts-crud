@@ -1,4 +1,4 @@
-import { BadRequestException, NotFoundException } from '@nestjs/common';
+import { BadRequestException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { ContactsService, CreateContactData, UpdateContactData, RemoveContactData } from './contacts.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
